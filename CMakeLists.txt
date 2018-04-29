@@ -12,4 +12,4 @@ add_executable(algorithm
         leetcode/685.redundant.connection.ii.tle.cpp
         leetcode/814.binary.tree.pruning.cpp
         leetcode/98.validate.binary.search.tree.cpp
-        notes/review_list.md leetcode/236.lowest.common.ancestor.of.a.binary.tree.cpp leetcode/61.rotate.list.cpp leetcode/24.swap.nodes.in.pairs.cpp leetcode/139.work.break.cpp leetcode/6.zigzag.conversion.cpp leetcode/127.word.ladder.v1.cpp leetcode/127.word.ladder.v2.cpp)
+        notes/review_list.md leetcode/236.lowest.common.ancestor.of.a.binary.tree.cpp leetcode/61.rotate.list.cpp leetcode/24.swap.nodes.in.pairs.cpp leetcode/139.work.break.cpp leetcode/6.zigzag.conversion.cpp leetcode/127.word.ladder.v1.cpp leetcode/127.word.ladder.v2.cpp leetcode/140.word.break.ii.tle.cpp leetcode/140.word.break.ii.v2.cpp)
