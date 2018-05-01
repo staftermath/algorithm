@@ -1,0 +1,80 @@
+//
+// Created by gwengww on 4/30/18.
+// use TrieNode
+// beat 94.05%
+
+class Solution {
+public:
+    vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
+        if (words.size() == 0) return {};
+        x_length = board.size();
+        if (x_length == 0) return {};
+        y_length = board[0].size();
+        if (y_length == 0) return {};
+        TrieNode root = buildTrie(words);
+        // cout << "construct completed" << endl;
+        // cout << root.next['p'-'a']->next['e'-'a']->next['a'-'a']->word << endl;
+        unordered_set<string> result = {};
+        for (int i=0; i<x_length; i++) {
+            for (int j=0; j<y_length; j++) {
+                helper(i, j, board, &root, result);
+            }
+        }
+        vector<string> result_vect = {};
+        for (string v: result) {
+            result_vect.push_back(v);
+        }
+        return result_vect;
+    }
+private:
+    int x_length, y_length;
+    struct TrieNode {
+        string word; // full word
+        TrieNode* next[26];
+        TrieNode()
+        {
+            this->word = "";
+            fill_n(this->next, 26, nullptr);
+        }
+    };
+    TrieNode buildTrie(vector<string>& words) {
+        TrieNode root = TrieNode();
+        for (string w: words) {
+            TrieNode* p = &root;
+            for (int i=0; i<w.size(); i++) {
+                int index = w[i] - 'a';
+                if (p->next[index] == nullptr) {
+                    p->next[index] = new TrieNode();
+                }
+                p = p->next[index];
+                if (i==w.size()-1 && p->word == "") {
+                    p->word = w; // assign word
+                }
+            }
+        }
+        return root;
+    }
+    bool isValid(int x, int y) {
+        if (x>=0 && x<x_length && y>=0 && y<y_length) return true;
+        return false;
+    }
+    void helper(int x, int y, vector<vector<char>>& board, TrieNode* trienode, unordered_set<string> & result) {
+        if (!isValid(x, y)) return;
+        if (board[x][y] == '\0') return;
+        int index = board[x][y] - 'a';
+        if (trienode->next[index] == nullptr) return;
+        if (trienode->next[index]->word != "") {
+            result.insert(trienode->next[index]->word);
+        }
+        // cout << board[x][y] << endl;
+        TrieNode * p = trienode->next[index];
+        char temp = board[x][y];
+        board[x][y] = '\0';
+        helper(x-1, y, board, p, result);
+        helper(x+1, y, board, p, result);
+        helper(x, y-1, board, p, result);
+        helper(x, y+1, board, p, result);
+        board[x][y] = temp;
+        return ;
+    }
+};
