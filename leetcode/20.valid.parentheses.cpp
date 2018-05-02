@@ -17,6 +17,7 @@ public:
                 if (s[i] == '}' && aStack.top() == '{' ||
                     s[i] == ']' && aStack.top() == '[' ||
                     s[i] == ')' && aStack.top() == '(') aStack.pop();
+                else return false;
             }
         }
         return aStack.empty();
