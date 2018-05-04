@@ -1,0 +1,24 @@
+//
+// Created by gwengww on 5/3/18.
+// beat 73.12%
+
+class Solution {
+public:
+    bool validPalindrome(string s) {
+        if (s.size() <= 2) return true;
+        return helper(s, 0, s.size()-1, false);
+
+    }
+private:
+    bool helper(string & s, int start, int end, bool deleted) {
+        while (start <= end && s[start] == s[end]) {
+            start++;
+            end--;
+        }
+        if (start > end) return true;
+        else if (deleted) return false;
+        else {
+            return helper(s, start, end-1, true) || helper(s, start+1, end, true);
+        }
+    }
+};
