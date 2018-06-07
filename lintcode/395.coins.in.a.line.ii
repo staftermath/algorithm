@@ -1,0 +1,32 @@
+//
+// Created by gwengww on 6/5/18.
+// beat 90.20%
+
+class Solution {
+public:
+    /**
+     * @param values: a vector of integers
+     * @return: a boolean which equals to true if the first player will win
+     */
+    bool firstWillWin(vector<int> &values) {
+        // write your code here
+        int size=values.size();
+        if (size<=2) return true;
+        vector<int> dp(size);
+        dp[size-1]=1;
+        dp[size-2]=1;
+        for (int pos=3; size-pos>=0; pos++) {
+            helper(values, pos, dp, size);
+        }
+        return dp[0];
+    }
+private:
+    void helper(vector<int> &values, int pos, vector<int>& dp, int size) {
+        if (pos==3) {
+            dp[size-pos] = (values[values.size()-pos]+values[values.size()-pos+1] > values.back());
+            return;
+        }
+        dp[size-pos] = !(dp[size-pos+1] && dp[size-pos+2]);
+        return;
+    }
+};
