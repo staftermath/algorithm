@@ -18,3 +18,7 @@ Single Linked List:
  Multi Linked List:
  1. Sort: 21, 23
  2. Other: 2, 160, 445
+ 
+ 
+### Backlog
+1. kth largest element O(n) time + O(1) space
