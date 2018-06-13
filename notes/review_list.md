@@ -22,3 +22,9 @@ Single Linked List:
  
 ### Backlog
 1. kth largest element O(n) time + O(1) space
+2. Study Fleury (Euler Path)
+
+### Notes
+1. Longest Increasing Subsequence Size: time O(Nlog N) space O(N).
+Review leetcode 300.
+2. Euler Path
