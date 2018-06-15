@@ -2,7 +2,7 @@
 // Created by gwengww on 6/12/18.
 // 32ms 95.34%
 // remove valid completely and pass value of current block to next step
-// 
+//
 
 class Solution {
 public:
