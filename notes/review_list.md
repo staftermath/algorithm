@@ -22,8 +22,10 @@ Single Linked List:
  
 ### Backlog
 1. kth largest element O(n) time + O(1) space
-2. Study Fleury (Euler Path)
-3. Study Union Find
+2. Fleury (Euler Path)
+3. [Union Find](https://www.geeksforgeeks.org/union-find/)
+4. [Rabin-Karp Algorithm](https://www.geeksforgeeks.org/searching-for-patterns-set-3-rabin-karp-algorithm/)
+5. Topological Sort
 
 ### Notes
 1. Longest Increasing Subsequence Size: time O(Nlog N) space O(N).
