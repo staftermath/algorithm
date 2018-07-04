@@ -1,0 +1,30 @@
+//
+// Created by gwengww on 7/4/18.
+// 4ms 100%
+// time worst case O(N). best case O(logn)
+// space O(1)?
+
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        return findMin(nums, 0, nums.size()-1);
+    }
+
+    int findMin(vector<int>& nums, int start, int end) {
+        int mid = (start+end)/2;
+        while (start + 1 < end) {
+            if (nums[mid] > nums[end]) {
+                start = mid;
+                mid = (start+end)/2;
+            } else if (nums[mid] < nums[end] || nums[start] != nums[mid]) {
+                end = mid;
+                mid = (start+end)/2;
+            } else {
+                int first = findMin(nums, start, mid);
+                int second = findMin(nums, mid, end);
+                return min(first, second);
+            }
+        }
+        return (nums[start] < nums[end])? nums[start]: nums[end];
+    }
+};
