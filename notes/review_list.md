@@ -26,6 +26,7 @@ Single Linked List:
 3. [Union Find](https://www.geeksforgeeks.org/union-find/)
 4. [Rabin-Karp Algorithm](https://www.geeksforgeeks.org/searching-for-patterns-set-3-rabin-karp-algorithm/)
 5. Topological Sort
+6. [Moore’s Voting Algorithm](https://www.geeksforgeeks.org/majority-element/)
 
 ### Notes
 1. Longest Increasing Subsequence Size: time O(Nlog N) space O(N).
