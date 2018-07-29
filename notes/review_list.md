@@ -32,3 +32,5 @@ Single Linked List:
 1. Longest Increasing Subsequence Size: time O(Nlog N) space O(N).
 Review leetcode 300.
 2. Euler Path
+3. Bit operation notes:
+    1. last bit with 1: `x&(x-1)^x`
