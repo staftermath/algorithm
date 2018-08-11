@@ -28,6 +28,7 @@ Single Linked List:
 5. Topological Sort
 6. [Moore’s Voting Algorithm](https://www.geeksforgeeks.org/majority-element/)
 7. [Knuth–Morris–Pratt algorithm](https://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/)
+8. [Segment Tree](https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/)
 
 ### Notes
 1. Longest Increasing Subsequence Size: time O(Nlog N) space O(N).
