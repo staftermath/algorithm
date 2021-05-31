@@ -86,17 +86,13 @@ def _initialize_random_partition(data: np.ndarray, k: int, seed: int=123):
 
 
 def _initialize_kmean_plus_plus(data: np.ndarray, k: int, seed: int = 123):
-    centers = _initialize_default(data, k, seed)
-    prob = normalize(np.reciprocal(euclidean_distances(data, centers) + 0.0000001), norm="l1", axis=1, copy=False)
     n, d = data.shape
-    allocation = np.ones(n)
-    for i in range(n):
-        allocation[i] = np.random.choice(range(k), p=prob[i])
-
-    for i in range(k):
-        if data[allocation == i].shape[0] == 0:
-            centers[i] = data[np.random.choice(range(n))]
-        else:
-            centers[i] = np.mean(data[allocation == i], axis=0)
+    centers = np.ones((k, d))
+    centers[0] = data[np.random.choice(range(n), 1)][0]
+    for i in range(1, k):
+        prob = np.min(euclidean_distances(data, centers, squared=True), axis=1)
+        prob = prob.flatten() / np.sum(prob)
+        center = np.random.choice(range(n), p=prob)
+        centers[i] = center
 
     return centers

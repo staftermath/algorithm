@@ -81,4 +81,4 @@ def test_kmean_cluster_iris_using_kmean_plus_plus(iris):
     centers, clusters = kmean.fit(iris["data"], init="kmean++")
     clusters = mapping(clusters)
     result = np.mean(iris["target"] == clusters)
-    assert result == 0.8866666666666667
+    assert result == 0.8933333333333333
