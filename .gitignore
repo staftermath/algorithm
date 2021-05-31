@@ -34,3 +34,6 @@
 # idea and proj files
 .idea/
 cmake-build-debug/
+
+# pycache
+.pyc
