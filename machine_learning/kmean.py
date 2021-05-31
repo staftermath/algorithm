@@ -87,6 +87,7 @@ def _initialize_random_partition(data: np.ndarray, k: int, seed: int=123):
 
 def _initialize_kmean_plus_plus(data: np.ndarray, k: int, seed: int = 123):
     n, d = data.shape
+    np.random.seed(seed)
     centers = np.ones((k, d))
     centers[0] = data[np.random.choice(range(n), 1)][0]
     for i in range(1, k):
